@@ -6,7 +6,7 @@ First AWS project. Background is backend (Spring Boot); AWS and networking were 
 
 Infrastructure is currently provisioned manually via the AWS Console. No IaC (Terraform/CDK) yet — noted here explicitly rather than implied.
 
----
+
 
 ## Repos
 
@@ -14,7 +14,6 @@ Infrastructure is currently provisioned manually via the AWS Console. No IaC (Te
 - Backend: [BookMyStay-BackendService](https://github.com/Abhishekkhode/BookMyStay-BackendService)
 - Deployed : [BookMyStay](https://bookmystay-one.vercel.app/)
 - This repo: architecture, decisions, docs
----
 
 ## Table of Contents
 
@@ -27,7 +26,7 @@ Infrastructure is currently provisioned manually via the AWS Console. No IaC (Te
 - [Cost](#cost)
 - [Roadmap](#roadmap)
 
----
+
 
 ## Architecture Overview
 
@@ -54,7 +53,6 @@ S3 · Secrets Manager · SSM Parameter Store · CloudWatch · SNS · IAM
 
 Full diagram + source file: [`architecture/`](./architecture)
 
----
 
 ## Tech Stack
 
@@ -71,7 +69,6 @@ Full diagram + source file: [`architecture/`](./architecture)
 | Observability    | CloudWatch, SNS                |
 | Endpoint         | VPC Endpoints                  |
 
----
 
 ## Security & Networking
 
@@ -83,7 +80,6 @@ Full diagram + source file: [`architecture/`](./architecture)
 - Known v1 gap: EC2 instance is in a public subnet. See [ADR-003](./adr/003-public-subnet-v1-tradeoff.md).
 - VPC Endpoints for internal Traffic routing
 
----
 
 ## Observability
 
@@ -93,7 +89,6 @@ Full diagram + source file: [`architecture/`](./architecture)
 
 Screenshots: [`screenshots/`](./screenshots)
 
----
 
 ## What v1 Intentionally Does Not Include
 
@@ -105,7 +100,6 @@ Screenshots: [`screenshots/`](./screenshots)
 
 Scoped for v3, once load testing (v2) shows what's actually needed. Not oversights — see [Roadmap](#roadmap).
 
----
 
 ## Decisions
 
@@ -119,7 +113,6 @@ Short, focused write-ups on individual tradeoffs: [`adr/`](./adr)
 | [004](./adr/004-secrets-manager-vs-ssm-split.md) | Secrets Manager + SSM split               |
 | [005](./adr/005-single-az-rds-v1.md)             | Single-AZ RDS in v1                       |
 
----
 
 ## Cost
 
@@ -135,12 +128,20 @@ Approximate, informally tracked during development — not benchmarked. See [`co
 | v2      | Load testing with k6 to find real bottlenecks     | 🔜 Next    |
 | v3      | ALB, ASG, Multi-AZ RDS, private app subnet, WAF   | 📋 Planned |
 
----
+
+## V2  : Load testing with K6
+
+- This directory contains the load testing scripts, configuration results, and metric reports comparing the BookMyStay System's performance before and after executing critical backend catalog optimizations.
+- [Analysis & Metrics](./V2/)
+- Details  - [README.md](./V2/README.md)
+- 📥 **Download the Full Benchmarks Slide Deck**: [AWS_Performance_Benchmarks.pdf](./V2/AWS_Performance_Benchmarks.pdf)
 
 
 ## Connect with Me
-
 **Abhishek Khode**
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20" /> [LinkedIn Profile](https://www.linkedin.com/in/abhishek-khode-1650372a0/)
----
+*AWS learner building production-inspired cloud architectures and validating them through monitoring and load testing.*
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20" /> [Abhishek Khode](https://www.linkedin.com/in/abhishek-khode-1650372a0/)
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20" /> [Abhishek](https://github.com/Abhishekkhode)
