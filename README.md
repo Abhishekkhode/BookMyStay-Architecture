@@ -30,7 +30,7 @@ Infrastructure is provisioned manually via the AWS Console. No IaC (Terraform/CD
 
 ## Architecture Overview
 
-![Architecture Diagram](./architecture/architecture-diagram.png)
+![Architecture Diagram](./V3/3-Teir.drawio%20%286%29.png)
 
 ```
 User Browser
@@ -39,19 +39,29 @@ User Browser
 Vercel (React/Vite SPA)
      │ HTTPS
      ▼
-VPC
-├── Public Subnet
-│   └── EC2 (t3.micro) — Spring Boot API, systemd
-│
-└── Private Subnets
-    ├── RDS PostgreSQL (Single-AZ)
-    └── ElastiCache Redis (Serverless)
+Application Load Balancer (ALB)
+     │
+     ├────────────────────── (Traffic Routing) ──────────────────────┐
+     ▼                                                               ▼
+Private Subnets (AZ A)                                      Private Subnets (AZ B)
+└── [Auto Scaling Group] EC2 (t3.micro)                     └── [Auto Scaling Group] EC2 (t3.micro)
+     │                                                               │
+     ├───────────────────────────────┴───────────────────────────────┤
+     ▼                                                               ▼
+RDS PostgreSQL Database (Private Subnet)                    ElastiCache Redis Cache (Private Subnet)
 
-Outside VPC ( via VPC Endpoints):
+Outside VPC (via VPC Endpoints):
 S3 · Secrets Manager · SSM Parameter Store · CloudWatch · SNS · IAM
 ```
 
-Full diagram + source file: [`architecture/`](./architecture)
+Full diagram + source file: [`V3/`](./V3)
+
+### 📍 Architectural Evolution (Phase 1 Initial Design)
+
+To see the progression of this project, you can view the starting single-instance topology deployed in **V1**:
+* **V1 Architecture Diagram**:
+ ![Architecture Diagram](architecture/architecture-diagram.png)
+* **V1 Setup Docs**: Refer to the [V1 architectural records and ADR tradeoffs](./architecture/) to see how the single-host infrastructure was originally designed before scaling.
 
 
 ## Tech Stack
