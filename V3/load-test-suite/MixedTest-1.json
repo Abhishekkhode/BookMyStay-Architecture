@@ -1,0 +1,215 @@
+{
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "catalog ok": {
+                    "passes": 56,
+                    "fails": 0,
+                    "name": "catalog ok",
+                    "path": "::catalog ok",
+                    "id": "7ba0a6a0caa4c95c4a668825bc2f9428"
+                },
+                "hotspot booking ok/conflict": {
+                    "name": "hotspot booking ok/conflict",
+                    "path": "::hotspot booking ok/conflict",
+                    "id": "d61ef042d4fb19590d03d6dbdfa1fea9",
+                    "passes": 11,
+                    "fails": 0
+                },
+                "availability ok": {
+                    "id": "ad79769db5818703a1ca9a9c54136f66",
+                    "passes": 20,
+                    "fails": 0,
+                    "name": "availability ok",
+                    "path": "::availability ok"
+                },
+                "booking ok/conflict": {
+                    "name": "booking ok/conflict",
+                    "path": "::booking ok/conflict",
+                    "id": "122b3a6c5e550033de765d258dbc7f71",
+                    "passes": 13,
+                    "fails": 0
+                }
+            }
+    },
+    "metrics": {
+        "http_req_tls_handshaking": {
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0
+        },
+        "http_req_sending": {
+            "min": 0,
+            "med": 0,
+            "max": 10.8923,
+            "p(90)": 1.5424099999999972,
+            "p(95)": 4.498799999999991,
+            "avg": 0.6275993421052631
+        },
+        "hotspot_booking_latency": {
+            "p(95)": 544.05405,
+            "avg": 465.66334545454544,
+            "min": 55.5803,
+            "med": 492.9481,
+            "max": 548.0813,
+            "p(90)": 540.0268
+        },
+        "http_reqs": {
+            "count": 304,
+            "rate": 16.84020292666108
+        },
+        "hotspot_booking_requests": {
+            "count": 11,
+            "rate": 0.6093494480041839
+        },
+        "iteration_duration": {
+            "min": 45.0825,
+            "med": 1254.5668,
+            "max": 1479.7398,
+            "p(90)": 1432.3101700000002,
+            "p(95)": 1459.95255,
+            "avg": 1135.6144220000003
+        },
+        "booking_conflict": {
+            "count": 24,
+            "rate": 1.3294897047364012
+        },
+        "http_req_duration{expected_response:true}": {
+            "med": 106.0238,
+            "max": 1028.9565,
+            "p(90)": 560.9483899999999,
+            "p(95)": 613.6816249999996,
+            "avg": 281.4321355555556,
+            "min": 19.2869
+        },
+        "http_req_blocked": {
+            "max": 814.6126,
+            "p(90)": 681.65594,
+            "p(95)": 704.2148599999999,
+            "avg": 176.81914769736838,
+            "min": 1.2218,
+            "med": 10.47915
+        },
+        "data_received": {
+            "count": 212087,
+            "rate": 11748.645125351213
+        },
+        "vus_max": {
+            "min": 100,
+            "max": 100,
+            "value": 100
+        },
+        "checks": {
+            "passes": 100,
+            "fails": 0,
+            "value": 1
+        },
+        "http_req_failed": {
+            "passes": 124,
+            "fails": 180,
+            "thresholds": {
+                "rate < 1": false
+            },
+            "value": 0.40789473684210525
+        },
+        "catalog_requests": {
+            "count": 56,
+            "rate": 3.1021426443849363
+        },
+        "catalog_latency": {
+            "min": 29.7063,
+            "med": 499.57394999999997,
+            "max": 707.0122,
+            "p(90)": 585.9599000000001,
+            "p(95)": 614.264575,
+            "avg": 489.80044107142845
+        },
+        "iterations": {
+            "count": 100,
+            "rate": 5.539540436401672
+        },
+        "http_req_connecting": {
+            "p(95)": 703.765,
+            "avg": 173.62046414473681,
+            "min": 0.8811,
+            "med": 10.127400000000002,
+            "max": 711.1912,
+            "p(90)": 678.99919
+        },
+        "data_sent": {
+            "count": 107908,
+            "rate": 5977.607294112316
+        },
+        "random_booking_requests": {
+            "rate": 0.7201402567322173,
+            "count": 13
+        },
+        "availability_requests": {
+            "count": 20,
+            "rate": 1.1079080872803344
+        },
+        "http_req_receiving": {
+            "min": 0,
+            "med": 1.94455,
+            "max": 17.0465,
+            "p(90)": 8.400089999999999,
+            "p(95)": 12.406584999999989,
+            "avg": 3.2262440789473708
+        },
+        "http_req_duration": {
+            "avg": 212.54988618421052,
+            "min": 4.6643,
+            "med": 100.0522,
+            "max": 1028.9565,
+            "p(90)": 539.02642,
+            "p(95)": 578.5660999999997
+        },
+        "random_booking_latency": {
+            "min": 475.5533,
+            "med": 536.2067,
+            "max": 655.8751,
+            "p(90)": 584.04204,
+            "p(95)": 615.4500999999999,
+            "avg": 536.8014769230768
+        },
+        "http_req_waiting": {
+            "med": 96.24924999999999,
+            "max": 1028.548,
+            "p(90)": 536.54049,
+            "p(95)": 570.9374649999999,
+            "avg": 208.69604276315792,
+            "min": 2.7071
+        },
+        "vus": {
+            "value": 18,
+            "min": 0,
+            "max": 95
+        },
+        "availability_latency": {
+            "avg": 568.65338,
+            "min": 466.7993,
+            "med": 535.59235,
+            "max": 756.0273,
+            "p(90)": 731.9458000000001,
+            "p(95)": 744.080195
+        }
+    },
+    "setup_data": {
+        "tokens": [
+            "Json Tokens"
+        ],
+        "roomIds": [
+            1,
+            2,
+            5,
+            3,
+            4
+        ]
+    }
+}

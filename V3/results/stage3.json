@@ -1,0 +1,210 @@
+{
+    "metrics": {
+        "data_sent": {
+            "count": 95987130,
+            "rate": 145192.06997924653
+        },
+        "http_req_duration": {
+            "max": 5722.1247,
+            "p(90)": 13.615759999999998,
+            "p(95)": 19.0371,
+            "avg": 11.241707439750199,
+            "min": 0,
+            "med": 8.3497
+        },
+        "http_req_duration{expected_response:true}": {
+            "p(95)": 19.037009999999984,
+            "avg": 11.233281872783106,
+            "min": 0,
+            "med": 8.3497,
+            "max": 1490.2419,
+            "p(90)": 13.6157
+        },
+        "total_requests": {
+            "count": 677805,
+            "rate": 1025.261521959071
+        },
+        "booking_latency": {
+            "avg": 10.93741897135098,
+            "min": 0,
+            "med": 8.2874,
+            "max": 1476.59,
+            "p(90)": 12.0111,
+            "p(95)": 18.2495
+        },
+        "data_received": {
+            "count": 722386577,
+            "rate": 1092696.5150416766
+        },
+        "http_req_connecting": {
+            "avg": 0.8022171618680896,
+            "min": 0,
+            "med": 0,
+            "max": 5707.5955,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "iterations": {
+            "count": 677805,
+            "rate": 1025.261521959071
+        },
+        "http_req_blocked": {
+            "p(95)": 0,
+            "avg": 0.8051085012651126,
+            "min": 0,
+            "med": 0,
+            "max": 5707.5955,
+            "p(90)": 0
+        },
+        "vus": {
+            "value": 3,
+            "min": 3,
+            "max": 1500
+        },
+        "iteration_duration": {
+            "min": 506.1912,
+            "med": 1261.9567,
+            "max": 8638.0817,
+            "p(90)": 1862.3359600000001,
+            "p(95)": 1937.1301599999997,
+            "avg": 1263.0304761249404
+        },
+        "http_req_receiving": {
+            "avg": 0.19893194960202423,
+            "min": 0,
+            "med": 0,
+            "max": 489.5702,
+            "p(90)": 0.5852599999999977,
+            "p(95)": 1.0064
+        },
+        "vus_max": {
+            "value": 1500,
+            "min": 1500,
+            "max": 1500
+        },
+        "http_req_tls_handshaking": {
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0
+        },
+        "http_req_failed": {
+            "passes": 1,
+            "fails": 677804,
+            "value": 0.0000014753505801816157
+        },
+        "http_req_waiting": {
+            "avg": 11.023297862364316,
+            "min": 0,
+            "med": 8.1971,
+            "max": 5722.1247,
+            "p(90)": 13.3903,
+            "p(95)": 18.6567
+        },
+        "catalog_latency": {
+            "avg": 10.872990004447779,
+            "min": 0,
+            "med": 8.2082,
+            "max": 5722.1247,
+            "p(90)": 11.9079,
+            "p(95)": 18.4109
+        },
+        "error_rate": {
+            "fails": 677804,
+            "passes": 1,
+            "value": 0.0000014753505801816157
+        },
+        "group_duration": {
+            "avg": 12.176527674330938,
+            "min": 0,
+            "med": 8.4481,
+            "max": 6747.4565,
+            "p(90)": 13.7996,
+            "p(95)": 19.685799999999965
+        },
+        "http_req_sending": {
+            "avg": 0.019477627783802045,
+            "min": 0,
+            "med": 0,
+            "max": 146.9226,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "status_200": {
+            "count": 677804,
+            "rate": 1025.2600093388896
+        },
+        "checks": {
+            "passes": 677804,
+            "fails": 1,
+            "value": 0.9999985246494199
+        },
+        "availability_latency": {
+            "avg": 12.681981291852832,
+            "min": 0,
+            "med": 9.1105,
+            "max": 1480.821,
+            "p(90)": 15.506520000000002,
+            "p(95)": 21.00475999999999
+        },
+        "http_reqs": {
+            "count": 677805,
+            "rate": 1025.261521959071
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {
+            "catalog": {
+                "path": "::catalog",
+                "id": "d6255a044b93301c9f393ce5a9ceaa61",
+                "groups": {},
+                "checks": {
+                        "catalog ok": {
+                            "name": "catalog ok",
+                            "path": "::catalog::catalog ok",
+                            "id": "57ee959fe8fe4842c89968d7b0300122",
+                            "passes": 474380,
+                            "fails": 1
+                        }
+                    },
+                "name": "catalog"
+            },
+            "availability": {
+                "name": "availability",
+                "path": "::availability",
+                "id": "83dee2f22e055338d5878bf220cd6cbf",
+                "groups": {},
+                "checks": {
+                        "availability ok": {
+                            "id": "df47750c87fcb6e99fb5bbafa674e61d",
+                            "passes": 135743,
+                            "fails": 0,
+                            "name": "availability ok",
+                            "path": "::availability::availability ok"
+                        }
+                    }
+            },
+            "rooms": {
+                "name": "rooms",
+                "path": "::rooms",
+                "id": "123ec619368207c449cae1590e345969",
+                "groups": {},
+                "checks": {
+                        "rooms ok": {
+                            "name": "rooms ok",
+                            "path": "::rooms::rooms ok",
+                            "id": "b07ca6d1884a9a6e2cbbec973b09dab7",
+                            "passes": 67681,
+                            "fails": 0
+                        }
+                    }
+            }
+        },
+        "checks": {}
+    }
+}

@@ -2,9 +2,9 @@
 
 AWS cloud architecture for a full-stack Hotel Management & Booking System. This repo documents infrastructure design, decisions, and operational setup — application code lives in separate frontend/backend repos (linked below).
 
-First AWS project. Background is backend (Spring Boot); AWS and networking were new going in. This is **v1 of a 3-part roadmap** — see [Roadmap](#roadmap).
+First AWS project. Background is backend (Spring Boot); AWS and networking were new going in. This repo details the completed **3-part scalability roadmap** — see [Roadmap](#roadmap).
 
-Infrastructure is currently provisioned manually via the AWS Console. No IaC (Terraform/CDK) yet — noted here explicitly rather than implied.
+Infrastructure is provisioned manually via the AWS Console. No IaC (Terraform/CDK) yet — noted here explicitly rather than implied.
 
 
 
@@ -98,7 +98,7 @@ Screenshots: [`screenshots/`](./screenshots)
 - Private subnet for the application server
 - AWS WAF
 
-Scoped for v3, once load testing (v2) shows what's actually needed. Not oversights — see [Roadmap](#roadmap).
+*Note: These high-availability and security additions have been fully implemented and validated in the [V3 release](./V3/).*
 
 
 ## Decisions
@@ -122,19 +122,27 @@ Approximate, informally tracked during development — not benchmarked. See [`co
 
 ## Roadmap
 
-| Version | Focus                                             | Status     |
-| ------- | ------------------------------------------------- | ---------- |
-| v1      | VPC, security groups, IAM, secrets, observability | ✅ Current |
-| v2      | Load testing with k6 to find real bottlenecks     | 🔜 Next    |
-| v3      | ALB, ASG, Multi-AZ RDS, private app subnet, WAF   | 📋 Planned |
+| Version | Focus                                             | Status       |
+| ------- | ------------------------------------------------- | ------------ |
+| v1      | VPC, security groups, IAM, secrets, observability | ✅ Completed |
+| v2      | Load testing with k6 to find real bottlenecks     | ✅ Completed |
+| v3      | ALB, ASG, Multi-AZ RDS, private app subnet, WAF   | ✅ Completed |
 
 
-## V2  : Load testing with K6
+## V2: Load testing with K6
 
 - This directory contains the load testing scripts, configuration results, and metric reports comparing the BookMyStay System's performance before and after executing critical backend catalog optimizations.
 - [Analysis & Metrics](./V2/)
-- Details  - [README.md](./V2/README.md)
+- Details - [README.md](./V2/README.md)
 - 📥 **Download the Full Benchmarks Slide Deck**: [AWS_Performance_Benchmarks.pdf](./V2/AWS_Performance_Benchmarks.pdf)
+
+## V3: High Availability & Horizontal Scaling
+
+- This directory documents the distributed, load-balanced, and horizontally autoscaled deployment of the system on AWS.
+- [Infrastructure & Benchmarks](./V3/)
+- Details - [README.md](./V3/README.md)
+- **Architectural Diagram**: [3-Teir.drawio (6).png](./V3/3-Teir.drawio%20%286%29.png)
+- **Verification**: Scaled system successfully supported **1,500+ concurrent Virtual Users (VUs)** with **0.00% error rates** and sub-20ms average response times.
 
 
 ## Connect with Me
@@ -144,4 +152,4 @@ Approximate, informally tracked during development — not benchmarked. See [`co
 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" width="20" /> [Abhishek Khode](https://www.linkedin.com/in/abhishek-khode-1650372a0/)
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20" /> [Abhishek](https://github.com/Abhishekkhode)
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="20" /> [Abhishek Khode](https://github.com/Abhishekkhode)
